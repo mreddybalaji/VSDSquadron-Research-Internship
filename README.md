@@ -71,6 +71,7 @@ Step  3: To make it less
 
 
 
+
 ```
 riscv64-unknown-elf-objdump -d sum_1ton.c | less
 ```
@@ -79,7 +80,12 @@ riscv64-unknown-elf-objdump -d sum_1ton.c | less
 Search for the main 
 use--> /main and press n 
 
+
 ![6](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/47209f29-f4ca-40db-a83c-6391d62bbb0f)
+
+
+![Screenshot from 2024-05-27 21-55-52](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/43f038b2-713b-4d9c-a5cf-9fc0436fd89a)
+
 
 
 
