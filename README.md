@@ -102,3 +102,12 @@ To find the number of instruction
 
 start address of present sequence - start address of next sequence
 </details>
+
+
+<details>
+<summary><b> TASK 2: RISC-V INSTRUCTION SET   </b></summary>
+
+
+
+
+</details>
