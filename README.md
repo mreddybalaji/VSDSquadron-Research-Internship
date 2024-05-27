@@ -104,8 +104,92 @@ start address of present sequence - start address of next sequence
 </details>
 
 
+
 <details>
+
+
 <summary><b> TASK 2: RISC-V INSTRUCTION SET   </b></summary>
+
+
+### RISC-V 
+RISC-V is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. It is designed to be royalty-free and open-source, allowing anyone to use and contribute to the architecture without any licensing fees or restrictions.
+
+### INSTRUCTIONS FORMAT IN RISC-V  
+The instructions format of a processor is how machine language instructions are structured and organized for a processor to execute. It is made up of a series of 0s and 1s, each containing information about the location and operation of data.  
+There are 6 instruction formats in RISC-V:  
+1. R-format  
+2. I-format  
+3. S-format  
+4. B-format  
+5. U-format  
+6. J-format  
+
+ADD r6, r2, r1:
+
+Instruction Type: R-type
+
+Instruction Format: 0000000 00001 00010 000 00110 0110011
+
+SUB r7, r1, r2:
+Instruction Type: R-type
+Instruction Format: 0100000 00010 00001 000 00111 0110011
+
+AND r8, r1, r3:
+Instruction Type: R-type
+Instruction Format: 0000000 00011 00001 111 01000 0110011
+
+OR r9, r2, r5:
+Instruction Type: R-type
+Instruction Format: 0000000 00101 00010 110 01001 0110011
+
+XOR r10, r1, r4:
+Instruction Type: R-type
+Instruction Format: 0000000 00100 00001 100 01010 0110011
+
+
+SLT r11, r2, r4:
+Instruction Type: R-type
+Instruction Format: 0000000 00100 00010 010 01011 0110011
+
+
+ADDI r12, r4, 5:
+Instruction Type: I-type
+Instruction Format: 000000000101 00100 000 01100 0010011
+
+
+SW r3, r1, 2:
+Instruction Type: S-type
+Instruction Format: 0000000 00001 00011 010 00010 0100011
+
+
+SRL r16, r14, r2:
+Instruction Type: R-type
+Instruction Format: 0000000 00010 01110 101 10000 0110011
+
+
+BNE r0, r1, 20:
+Instruction Type: B-type
+Instruction Format: 0000000 00001 00000 001 10100 1100011
+
+
+BEQ r0, r0, 15:
+Instruction Type: B-type
+Instruction Format: 0000000 00000 00000 000 01111 1100011
+
+
+LW r13, r1, 2:
+Instruction Type: I-type
+Instruction Format: 000000000010 00001 010 01101 0000011
+
+
+SLL r15, r1, r2:
+Instruction Type: R-type
+Instruction Format: 0000000 00010 00001 001 01111 0110011
+
+
+
+
+
 
 
 
