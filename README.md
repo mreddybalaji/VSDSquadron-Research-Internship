@@ -260,3 +260,18 @@ Sure, I'd be happy to provide an overview of the topics you've listed related to
 
 
 </details>
+
+
+
+<details>
+<summary><b> TASK 3: RISC-V Verilog Functional Simulation </b></summary>
+
+
+
+
+
+
+
+
+
+
