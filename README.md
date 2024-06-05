@@ -266,6 +266,235 @@ Sure, I'd be happy to provide an overview of the topics you've listed related to
 <details>
 <summary><b> TASK 3: RISC-V Verilog Functional Simulation </b></summary>
 
+### Steps for RISCV Functional Simulations:
+
+Install `iverilog` and `GTKWave`:
+
+```
+sudo apt install iverilog
+```
+
+```
+sudo apt install gtkwave
+```
+
+
+
+step 1: create a new dir in a folder as 
+
+
+```
+mkdir mrb
+```
+
+step 2: create files the Verilog files code and testbench using touch
+
+file named as rv32i.v and rv32i_tb.v
+
+Step 3: To run and simulate the Verilog code
+
+
+```
+iverilog -o rv32i rv32i.v rv32i_tb.v
+```
+```
+./rv32i
+```
+
+Step 4:To simulate in GTKWave
+
+```
+gtkwave rv32i.vcd
+```
+
+### OUTPUT:
+Here's the given information in a table format:
+
+| Operation | Standard RISCV ISA            | Hardcoded ISA |
+|-----------|-------------------------------|---------------|
+| ADD       | R6, R2, R1                    | 32'h00110333  |
+|           |                               | 32'h02208300  |
+| SUB       | R7, R1, R2                    | 32'h402083b3  |
+|           |                               | 32'h02209380  |
+| AND       | R8, R1, R3                    | 32'h0030f433  |
+|           |                               | 32'h0230a400  |
+| OR        | R9, R2, R5                    | 32'h005164b3  |
+|           |                               | 32'h02513480  |
+| XOR       | R10, R1, R4                   | 32'h0040c533  |
+|           |                               | 32'h0240c500  |
+| SLT       | R1, R2, R4                    | 32'h0045a0b3  |
+|           |                               | 32'h02415580  |
+| ADDI      | R12, R4, 5                    | 32'h004120b3  |
+|           |                               | 32'h00520600  |
+| BEQ       | R0, R0, 15                    | 32'h00000f63  |
+|           |                               | 32'h00f00002  |
+| SW        | R3, R1, 2                     | 32'h0030a123  |
+|           |                               | 32'h00209181  |
+| LW        | R13, R1, 2                    | 32'h0020a683  |
+|           |                               | 32'h00208681  |
+| SRL       | R16, R14, R2                  | 32'h0030a123  |
+|           |                               | 32'h00271803  |
+| SLL       | R15, R1, R2                   | 32'h002097b3  |
+|           |                               | 32'h00208783  |
+
+Each operation with its corresponding standard RISCV ISA format and hardcoded ISA format.
+
+### 1. ADD: `ADD R6, R2 ,R1`
+
+Output is 1+2 = 3 
+
+32- bit instruction for `ADD R6, R2 ,R1` is 0220833
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/91562f39-cba5-4140-8f4d-5f450a6fdc9e)
+
+For Example:
+### Breakdown and how it maps to the 32-bit instruction format in RISCV:
+
+The instruction `ADD R6, R2, R1` is encoded in the RISCV ISA as `0x0220833`. 
+
+In the RISCV ISA, the `ADD` instruction format is as follows:
+```
+funct7 | rs2 | rs1 | funct3 | rd | opcode
+```
+Each field is described as:
+- `funct7`: 7 bits
+- `rs2`: 5 bits
+- `rs1`: 5 bits
+- `funct3`: 3 bits
+- `rd`: 5 bits
+- `opcode`: 7 bits
+
+For `ADD R6, R2, R1`, we need to fill in these fields:
+- `funct7` = `0000000` (for `ADD`)
+- `rs2` = `R1` (register 1 in binary: `00001`)
+- `rs1` = `R2` (register 2 in binary: `00010`)
+- `funct3` = `000` (for `ADD`)
+- `rd` = `R6` (register 6 in binary: `00110`)
+- `opcode` = `0110011` (for R-type instructions)
+
+Putting these together:
+```
+funct7 | rs2  | rs1  | funct3 | rd   | opcode
+0000000 | 00001 | 00010 | 000   | 00110 | 0110011
+```
+In binary: `0000000 00001 00010 000 00110 0110011`
+
+Converting each field to hexadecimal:
+- `funct7` = `0000000` = `0x00`
+- `rs2` = `00001` = `0x01`
+- `rs1` = `00010` = `0x02`
+- `funct3` = `000` = `0x0`
+- `rd` = `00110` = `0x06`
+- `opcode` = `0110011` = `0x33`
+
+Combining these into a single 32-bit instruction:
+```
+0000000 00001 00010 000 00110 0110011
+```
+
+In hexadecimal, this is: `0x00208333`
+
+Given in the hardcoded format:
+```
+Opcode: 0x33
+funct3: 0x0
+funct7: 0x0
+rd: 0x6
+rs1: 0x2
+rs2: 0x1
+```
+
+So, the 32-bit instruction for `ADD R6, R2, R1` in RISCV ISA is `0x00208333`. 
+
+### 2. SUB: SUB R7, R1 ,R2
+
+Output is 1-2 = -1 or 0XFFFFFFFF 
+
+32- bit instruction for `SUB R7, R1 ,R2` is 0220833
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/615c8461-b6fd-4455-ac3e-4a9f30ccc9c1)
+
+
+3. AND: AND R8, R1, R3
+
+Output is 3 & 1 = 1 or 0X00000001
+
+32 - bit instruction for `AND R8, R1, R3` is 0230A400.
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/3b422dc3-a10c-4f58-a24a-f5c2bc571e48)
+
+
+
+4.OR: OR R9, R2, R5
+
+Output is 2|5 = 7 
+
+32- bit instruction for `OR R9, R2, R5 ` is 02513480
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/a7113048-dc18-4a68-857e-8bf61890b362)
+
+
+5. XOR: XOR R10, R1, R4
+
+Output is 1 (0001) ^ 4 (0100) = 5 (0101) 
+
+32 - bit instruction for `XOR R10, R1, R4` is 0240C500.
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/71726760-eca6-4c49-8343-8ae0ddc70e18)
+
+6. SLT: SLT R1, R2, R4
+
+Output is = comparing the value 2 with 4 , so 2 < 4 = 1 
+
+32- bit instruction for `SLT R1, R2, R4` is 02415580.
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/af766f1d-5ae6-4072-b2c8-574c8c16f5a6)
+
+
+7. ADDI: ADDI R12, R4, 5
+
+Output is value 4 is stored in register with an value, 4+5=9
+
+32- bit instruction for `ADDI R12, R4, 5` is 00520600.
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/8bfd163f-5c0e-43d2-a0b3-d06fb04a0fa7)
+
+8. BEQ: BEQ R0, R0, 15
+
+Output is BEQ checks the values stored in both registers, both the reg. are equal, and it increments the PC by 15. So, 10 + 15= 25 or 0x00000019.
+
+32- bit instruction for `BEQ R0, R0, 15` is 00F0002.
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/a66ab341-a439-4c55-afb5-780e272c1989)
+
+9. BNE: BNE R0, R1, 20
+
+Output BNE checks the values stored in both registers, both the reg. not equal, and it increments the PC by 20. So, 26 + 20 =46 or 0X0000001A.
+
+32 - bit instruction for `BNE R0, R1, 20` is 00210700.
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/b781dcfd-8ba4-4644-93a1-2d9c8ebf82a0)
+
+
+10. SLL: SLL R15, R1, R2
+
+Output (0001) << 2 = 0100 or 4.
+
+32 - bit instruction for `SLL R15, R1, R2` is 00210700
+
+![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/94b8f63d-2160-4bf2-9350-a86a953aa1b6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
