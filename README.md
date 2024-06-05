@@ -415,7 +415,8 @@ Output is 1-2 = -1 or 0XFFFFFFFF
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/615c8461-b6fd-4455-ac3e-4a9f30ccc9c1)
 
 
-3. AND: AND R8, R1, R3
+
+### 3. AND: AND R8, R1, R3
 
 Output is 3 & 1 = 1 or 0X00000001
 
@@ -424,7 +425,9 @@ Output is 3 & 1 = 1 or 0X00000001
 
 
 
-4.OR: OR R9, R2, R5
+
+
+### 4.OR: OR R9, R2, R5
 
 Output is 2|5 = 7 
 
@@ -432,7 +435,8 @@ Output is 2|5 = 7
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/a7113048-dc18-4a68-857e-8bf61890b362)
 
 
-5. XOR: XOR R10, R1, R4
+
+### 5. XOR: XOR R10, R1, R4
 
 Output is 1 (0001) ^ 4 (0100) = 5 (0101) 
 
@@ -440,7 +444,9 @@ Output is 1 (0001) ^ 4 (0100) = 5 (0101)
 
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/71726760-eca6-4c49-8343-8ae0ddc70e18)
 
-6. SLT: SLT R1, R2, R4
+
+
+### 6. SLT: SLT R1, R2, R4
 
 Output is = comparing the value 2 with 4 , so 2 < 4 = 1 
 
@@ -449,7 +455,9 @@ Output is = comparing the value 2 with 4 , so 2 < 4 = 1
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/af766f1d-5ae6-4072-b2c8-574c8c16f5a6)
 
 
-7. ADDI: ADDI R12, R4, 5
+
+
+### 7. ADDI: ADDI R12, R4, 5
 
 Output is value 4 is stored in register with an value, 4+5=9
 
@@ -457,7 +465,10 @@ Output is value 4 is stored in register with an value, 4+5=9
 
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/8bfd163f-5c0e-43d2-a0b3-d06fb04a0fa7)
 
-8. BEQ: BEQ R0, R0, 15
+
+
+
+### 8. BEQ: BEQ R0, R0, 15
 
 Output is BEQ checks the values stored in both registers, both the reg. are equal, and it increments the PC by 15. So, 10 + 15= 25 or 0x00000019.
 
@@ -465,7 +476,10 @@ Output is BEQ checks the values stored in both registers, both the reg. are equa
 
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/a66ab341-a439-4c55-afb5-780e272c1989)
 
-9. BNE: BNE R0, R1, 20
+
+
+
+### 9. BNE: BNE R0, R1, 20
 
 Output BNE checks the values stored in both registers, both the reg. not equal, and it increments the PC by 20. So, 26 + 20 =46 or 0X0000001A.
 
@@ -474,7 +488,10 @@ Output BNE checks the values stored in both registers, both the reg. not equal, 
 ![image](https://github.com/mreddybalaji/VSDSquadron-Research-Internship/assets/130784457/b781dcfd-8ba4-4644-93a1-2d9c8ebf82a0)
 
 
-10. SLL: SLL R15, R1, R2
+
+
+
+### 10. SLL: SLL R15, R1, R2
 
 Output (0001) << 2 = 0100 or 4.
 
